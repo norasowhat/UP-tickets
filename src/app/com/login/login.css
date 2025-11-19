@@ -1,0 +1,20 @@
+.contenedor-general {
+  display: flex;
+}
+
+.contenedor-izquierda {
+  border-color: red;
+  border-style: dotted;
+  width: 50%;
+}
+
+.contenedor-izquierda .texto {
+  font-family: var(--font-principal);
+  color: var(--color-dorado);
+}
+.contenedor-derecha {
+  border-color: red;
+  border-style: dotted;
+  width: 50%;
+  display: flex;
+}

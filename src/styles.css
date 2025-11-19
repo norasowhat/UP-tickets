@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --font-principal: 'Roboto Condensed', sans-serif;
+
+  --color-base: #ffffff;
+  --color-gris: #f4f4f4;
+  --color-rojo: #8c1f3d;
+  --color-dorado: #c8a568;
+}
+
+body {
+  font-family: var(--font-principal);
+  margin: 0;
+  padding: 0;
+}
