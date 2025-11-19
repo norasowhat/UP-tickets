@@ -1,20 +1,116 @@
 .contenedor-general {
   display: flex;
+  height: 100vh;
 }
 
 .contenedor-izquierda {
-  border-color: red;
-  border-style: dotted;
+  /*border-color: red;
+  border-style: dotted;*/
   width: 50%;
+}
+
+.logo {
+  /*border-color: red;
+  border-style: dotted;*/
 }
 
 .contenedor-izquierda .texto {
   font-family: var(--font-principal);
   color: var(--color-dorado);
+  padding-left: 2rem;
 }
 .contenedor-derecha {
-  border-color: red;
-  border-style: dotted;
+  /*border-color: red;
+  border-style: dotted;*/
   width: 50%;
+  background-image: linear-gradient(rgba(111, 26, 46, 0.6), rgba(111, 26, 46, 0.6)),
+    url('/imgs/fondo-yupi.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.contenedor-izquierda .formulario {
+  /*border-color: red;
+  border-style: dotted;*/
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-rojo);
+  width: 80%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.campo {
+  color: var(--color-base);
+  display: flex;
+  flex-direction: column;
+  font-size: x-large;
+}
+
+button {
+  border-radius: 5px;
+  background-color: var(--color-dorado);
+  border-color: var(--color-dorado);
+  color: var(--color-base);
+  padding: 1.5rem;
+  font-size: large;
+}
+
+/*estilo del input de:https://uiverse.io/Satwinder04/ancient-sloth-30*/
+.input-container {
+  position: relative;
+  margin: 20px;
+}
+
+.input-field {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid var(--color-base);
+  outline: none;
+  background-color: transparent;
+}
+
+.input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: rgba(204, 204, 204, 0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-base);
+  transition: all 0.3s ease;
+}
+
+.input-field:focus + .input-label {
+  top: 35px;
+  font-size: 12px;
+  color: var(--color-base);
+}
+
+.input-field:focus + .input-label + .input-highlight {
+  width: 100%;
+}
+.titulo-input {
+  color: var(--color-base);
+  margin-bottom: 1rem;
+  font-size: x-large;
 }
