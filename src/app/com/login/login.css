@@ -1,3 +1,6 @@
+body {
+  background-color: var(--color-base);
+}
 .contenedor-general {
   display: flex;
   height: 100vh;
@@ -12,6 +15,13 @@
 .logo {
   /*border-color: red;
   border-style: dotted;*/
+  display: flex;
+  flex-direction: row;
+}
+
+.logo .titulo {
+  color: var(--color-dorado);
+  margin-top: 1rem;
 }
 
 .contenedor-izquierda .texto {
@@ -78,6 +88,7 @@ button {
   border-bottom: 2px solid var(--color-base);
   outline: none;
   background-color: transparent;
+  color: var(--color-base);
 }
 
 .input-label {
