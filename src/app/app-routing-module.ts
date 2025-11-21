@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Login } from './com/login/login';
-import { PaginaPrincipal } from './com/pagina-principal/pagina-principal';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: Login },
-  { path: 'dashboard', component: PaginaPrincipal },
-  { path: '**', redirectTo: '/login' },
+  {
+    path: 'login',
+    loadComponent: () => import('./com/login/login').then((m) => m.Login),
+  },
+  {
+    path: 'pagina-principal',
+    loadComponent: () =>
+      import('./com/pagina-principal/pagina-principal').then((m) => m.PaginaPrincipal),
+  },
 ];
 
 @NgModule({
