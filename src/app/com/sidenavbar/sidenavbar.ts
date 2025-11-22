@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenavbar',
@@ -8,4 +9,9 @@ import { CommonModule } from '@angular/common';
   templateUrl: './sidenavbar.html',
   styleUrl: './sidenavbar.css',
 })
-export class Sidenavbar {}
+export class Sidenavbar {
+  constructor(private router: Router) {}
+  cerrarSesion() {
+    this.router.navigate(['/login']);
+  }
+}

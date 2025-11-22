@@ -35,7 +35,7 @@
 }
 
 .titulo-pagina {
-  font-family: var(--font-principal);
+  font-family: var(--font-formal);
   color: var(--color-dorado);
   padding-left: 4rem;
   margin-top: 2rem;
@@ -43,6 +43,78 @@
   border-style: dotted;*/
 }
 
+.titulo-pagina p {
+  font-family: var(--font-principal);
+}
+.contenedor-busqueda {
+  display: flex;
+  justify-content: space-around; /* Los centra horizontalmente */
+  align-items: center; /* Los alinea verticalmente */
+  /*gap: 2rem; /* Espacio entre DEEK y el buscador  padding-left: 4rem;*/
+  margin-top: 2rem;
+}
+.btn-outline-success {
+  color: var(--color-base);
+  border-color: var(--color-base);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--color-dorado);
+  color: var(--color-rojo);
+  border-color: var(--color-dorado);
+}
+.buscar-profesor {
+  /* border-color: red;
+  border-style: dotted;*/
+  background-color: var(--color-rojo);
+  width: 80%;
+  max-width: 300px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.items-busqueda {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.item-busqueda {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.item-busqueda h1 {
+  margin-bottom: 5px;
+  font-size: medium;
+  font-family: var(--font-principal);
+  color: var(--color-rojo);
+}
+
+.dropdown-item {
+  width: 150px;
+  padding: 8px 5px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: 1px solid var(--color-rojo);
+  box-sizing: border-box;
+}
+
+.profes-aviso {
+  font-family: var(--font-principal);
+  color: var(--color-rojo);
+  font-weight: 600;
+  font-size: large;
+}
 .contenedor-general {
   /*border-color: red;
   border-style: dotted;*/
@@ -55,8 +127,8 @@
   /*border-color: red;
   border-style: dotted;*/
   background-color: var(--color-rojo);
-  width: 80%;
-  max-width: 1300px;
+  width: 90%;
+  max-width: 1800px;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -71,11 +143,10 @@
   border-style: dotted;*/
   background-color: var(--color-base);
   width: 90%;
-  max-width: 1300px;
+  max-width: 1800px;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -84,6 +155,7 @@
 .tabla-centro {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .tabla-centro thead th {
@@ -91,8 +163,7 @@
   text-align: left;
   padding: 12px 15px;
   font-weight: 600;
-  font-size: larger;
+  font-size: medium;
   border-bottom: 2px solid var(--color-dorado);
-  width: 25%;
   box-sizing: border-box;
 }

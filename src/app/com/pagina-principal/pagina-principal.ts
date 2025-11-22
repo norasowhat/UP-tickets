@@ -13,8 +13,4 @@ import { AgregarProfesor } from '../agregar-profesor/agregar-profesor';
 })
 export class PaginaPrincipal {
   constructor(private router: Router) {}
-
-  volverAlLogin() {
-    this.router.navigate(['/login']);
-  }
 }

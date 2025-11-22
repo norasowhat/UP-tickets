@@ -16,6 +16,58 @@
   <div class="titulo-pagina">
     <h1>Profesores:</h1>
   </div>
+  <div class="contenedor-busqueda">
+    <div class="profes-aviso">
+      <p>• En esta tabla puedes buscar el nombre del profesor.</p>
+      <p>• Para facilitar la búsqueda puedes ingresar el nombre del profesor.</p>
+    </div>
+    <div class="buscar-profesor">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="" />
+        <button class="btn btn-outline-success" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="titulo-pagina">
+    <h1>Adicionales:</h1>
+    <p>Criterios de búsqueda adicionales</p>
+  </div>
+  <div class="items-busqueda">
+    <div class="item-busqueda">
+      <h1>Grado investigador</h1>
+      <select class="dropdown-item">
+        <option value="">Selecciona...</option>
+        <option value="doctorado">Doctorado</option>
+        <option value="maestria">Maestría</option>
+        <option value="licenciatura">Licenciatura</option>
+      </select>
+    </div>
+    <div class="item-busqueda">
+      <h1>No. incidencias</h1>
+      <select class="dropdown-item">
+        <option value="">Selecciona...</option>
+        <option value="doctorado">Doctorado</option>
+        <option value="maestria">Maestría</option>
+        <option value="licenciatura">Licenciatura</option>
+      </select>
+    </div>
+    <div class="item-busqueda">
+      <h1>Satisfacción académica</h1>
+      <select class="dropdown-item">
+        <option value="">Selecciona...</option>
+        <option value="doctorado">Doctorado</option>
+        <option value="maestria">Maestría</option>
+        <option value="licenciatura">Licenciatura</option>
+      </select>
+    </div>
+    <div class="item-busqueda">
+      <h1>Fecha contratación</h1>
+      <input type="date" class="dropdown-item" />
+    </div>
+  </div>
+
   <div class="contenedor-general">
     <div class="contenedor-profesores">
       <div class="centro-blanco">
@@ -23,10 +75,11 @@
           <thead>
             <tr>
               <th>Nombre</th>
-              <th>Apellido Paterno</th>
-              <th>Apellido Materno</th>
-              <th>Facultad</th>
               <th>ID</th>
+              <th>Academia</th>
+              <th>Satisfacción académica</th>
+              <th>Nivel de estudios</th>
+              <th>No. de incidenias</th>
             </tr>
           </thead>
           <tbody></tbody>

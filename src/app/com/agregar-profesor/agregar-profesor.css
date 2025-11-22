@@ -30,6 +30,9 @@ body {
   align-items: flex-start;
 }
 
+.contenedor-general h1 {
+  font-family: var(--font-formal);
+}
 .contenedor-general .formulario {
   background-color: var(--color-rojo);
   width: 80%;
