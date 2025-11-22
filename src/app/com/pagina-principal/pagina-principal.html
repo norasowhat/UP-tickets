@@ -1,4 +1,39 @@
-<p>pagina-principal works!</p>
-<div>
+<div class="navbar">
   <app-sidenavbar></app-sidenavbar>
+</div>
+
+<div class="profesores">
+  <div class="imagen-profes">
+    <img src="/imgs/profes.jpg" alt="#" />
+  </div>
+  <div class="frase-inspiradora">
+    <hr class="frase-esparador" />
+    <p class="texto-frase">
+      “Haz lo mejor que puedas hasta que sepas mejor. Luego, cuando sepas más, hazlo mejor.” — Maya
+      Angelou
+    </p>
+  </div>
+  <div class="titulo-pagina">
+    <h1>Profesores:</h1>
+  </div>
+  <div class="contenedor-general">
+    <div class="contenedor-profesores">
+      <div class="centro-blanco">
+        <table class="tabla-centro">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>Academia</th>
+              <th>Facultad</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="componente">
+    <app-agregar-profesor></app-agregar-profesor>
+  </div>
 </div>

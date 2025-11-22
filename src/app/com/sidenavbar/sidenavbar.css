@@ -1,3 +1,35 @@
 .navbar {
   background-color: var(--color-dorado) !important;
 }
+
+.navbar-brand > img {
+  border-radius: 50%;
+}
+
+.navbar {
+  background-color: var(--color-dorado) !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.nav-link {
+  color: var(--color-rojo) !important;
+  font-size: larger;
+  font-family: var(--font-principal);
+}
+
+.navbar-brand {
+  font-family: var(--font-formal);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 200%;
+  color: var(--color-rojo) !important;
+}

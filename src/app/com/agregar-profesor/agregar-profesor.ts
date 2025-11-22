@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-sidenavbar',
+  selector: 'app-agregar-profesor',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './sidenavbar.html',
-  styleUrl: './sidenavbar.css',
+  templateUrl: './agregar-profesor.html',
+  styleUrl: './agregar-profesor.css',
 })
-export class Sidenavbar {}
+export class AgregarProfesor {}

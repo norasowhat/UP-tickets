@@ -1,0 +1,98 @@
+.profesores {
+  padding-top: 5rem;
+}
+
+.imagen-profes {
+  width: 100%;
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.imagen-profes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frase-inspiradora {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.frase-separador {
+  width: 150px;
+  border: none;
+  border-top: 20px solid var(--color-dorado);
+  margin: 0 auto 10px;
+}
+
+.texto-frase {
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--color-dorado);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.titulo-pagina {
+  font-family: var(--font-principal);
+  color: var(--color-dorado);
+  padding-left: 4rem;
+  margin-top: 2rem;
+  /*border-color: red;
+  border-style: dotted;*/
+}
+
+.contenedor-general {
+  /*border-color: red;
+  border-style: dotted;*/
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-profesores {
+  /*border-color: red;
+  border-style: dotted;*/
+  background-color: var(--color-rojo);
+  width: 80%;
+  max-width: 1300px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.centro-blanco {
+  /*border-color: red;
+  border-style: dotted;*/
+  background-color: var(--color-base);
+  width: 90%;
+  max-width: 1300px;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tabla-centro {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-centro thead th {
+  font-family: var(--font-principal);
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 600;
+  font-size: larger;
+  border-bottom: 2px solid var(--color-dorado);
+  width: 25%;
+  box-sizing: border-box;
+}
