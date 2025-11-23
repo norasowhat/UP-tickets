@@ -82,7 +82,16 @@
               <th>No. de incidenias</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            <tr *ngFor="let prof of profesores">
+              <td>{{ prof.Nombre }}</td>
+              <td>{{ prof.ID }}</td>
+              <td>{{ prof.Academia }}</td>
+              <td>{{ prof.Satisfaccion_academica }}</td>
+              <td>{{ prof.Nivel_de_estudios }}</td>
+              <td>{{ prof.Numero_de_incidencias }}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
