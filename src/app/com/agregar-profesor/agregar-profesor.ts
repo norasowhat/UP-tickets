@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -13,6 +13,8 @@ import { AcademyService } from '../../services/dp-academias';
 })
 
 export class AgregarProfesor implements OnInit {
+
+  @Output() profesorAgregado = new EventEmitter<void>();
 
   academias: any[] = [];
 
@@ -35,7 +37,7 @@ export class AgregarProfesor implements OnInit {
   }
 
   getAcademias() {
-    this.academyService.getAcademias().subscribe({        // <-- CORREGIDO
+    this.academyService.getAcademias().subscribe({       
       next: (resp) => {
         this.academias = resp;
         console.log("Academias cargadas:", this.academias);
@@ -54,6 +56,7 @@ export class AgregarProfesor implements OnInit {
       next: (resp:any) => {
         console.log("Respuesta del servidor:", resp);
         alert("Profesor agregado correctamente");
+        this.profesorAgregado.emit();
       },
       error: (err:any) => {
         console.error("Error en el servidor:", err);
