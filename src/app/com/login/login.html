@@ -19,7 +19,7 @@
             <div class="titulo-input">
               <label for="password">Correo institucional:</label>
             </div>
-            <input placeholder="xxxxxxx@up.edu.mx" class="input-field" type="text" />
+            <input [(ngModel)] = "email" placeholder="xxxxxxx@up.edu.mx" class="input-field" type="text" />
             <label for="input-field" class="input-label">Correo</label>
             <span class="input-highlight"></span>
           </div>
@@ -27,7 +27,7 @@
             <div class="titulo-input">
               <label for="password">Contraseña:</label>
             </div>
-            <input placeholder="********" class="input-field" type="text" />
+            <input [(ngModel)]="password" placeholder="********" class="input-field" type="text" />
             <label for="input-field" class="input-label">Contraseña</label>
             <span class="input-highlight"></span>
           </div>
