@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class Auth {
-  private apiUrl = 'http://localhost:8888/web/up-tickets-back/login.php';
+  private apiUrl = 'http://localhost/up-tickets-back/login.php';
 
   constructor(private http: HttpClient) {}
 
