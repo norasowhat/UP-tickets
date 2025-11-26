@@ -96,7 +96,7 @@
               <td>{{ prof.Satisfaccion_academica }}</td>
               <td>{{ prof.Nivel_de_estudios }}</td>
               <td>{{ prof.Numero_de_incidencias }}</td>
-              <button>BOTON XD</button>
+              <td><button class="boton" (click)="abrirModal()">Reportes</button></td>
             </tr>
           </tbody>
         </table>
@@ -106,5 +106,65 @@
   <hr class="frase-esparador" />
   <div class="componente">
     <app-agregar-profesor (profesorAgregado)="loadProfesores()"></app-agregar-profesor>
+  </div>
+</div>
+
+<div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Reportes</h5>
+        <button type="button" class="boton" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fa-solid fa-x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="datos-profesor">
+          <div class="usuario-fake">
+            <i class="fa-regular fa-user"></i>
+          </div>
+          <div class="nombre-prof">
+            <h2>Papu pro grasa :v</h2>
+          </div>
+        </div>
+        <div class="reportes">
+          <div class="tabla-reportes">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+          </div>
+        </div>
+        <div class="agregar-reporte">
+          <div class="titulo-agregar">
+            <h2>Generar Reporte:</h2>
+          </div>
+          <div class="tipo-reporte">
+            <label for="" class="espacio">Tipo de reporte:</label>
+            <select class="input-field">
+              <option value="">...</option>
+              <option>Cambios de calificación</option>
+              <option>Cambios de fecha de examen</option>
+              <option>Reportes de integridad académica</option>
+              <option>Reporte disciplinar a profesor</option>
+              <option>Incidencia de pago a favor</option>
+              <option>Incidencia de pago en contra</option>
+            </select>
+          </div>
+          <div class="descripcion-reporte">
+            <label for="" class="espacio">Descripción:</label>
+            <input type="text" placeholder="..." class="letra-placeholder" />
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="boton" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="boton">Agregar</button>
+      </div>
+    </div>
   </div>
 </div>

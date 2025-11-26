@@ -11,14 +11,14 @@ import { ProfesorService } from '../../services/tabla-profesores';
   imports: [CommonModule, Sidenavbar, AgregarProfesor],
   templateUrl: './pagina-principal.html',
   styleUrl: './pagina-principal.css',
-  providers: [ProfesorService]
+  providers: [ProfesorService],
 })
 export class PaginaPrincipal implements OnInit {
   profesores: any[] = [];
   loading: boolean = false;
   error: string = '';
-  
-  constructor(private router: Router,private profesorService: ProfesorService) {}
+
+  constructor(private router: Router, private profesorService: ProfesorService) {}
 
   ngOnInit(): void {
     this.loadProfesores();
@@ -33,12 +33,10 @@ export class PaginaPrincipal implements OnInit {
     //     console.error("Error al cargar profesores:", err);
     //   }
     // });
-  
-
 
     this.loading = true;
     this.profesorService.getProfesores().subscribe({
-      next: (data:any) => {
+      next: (data: any) => {
         console.log('Datos recibidos del backend:', data);
         this.profesores = data;
         this.loading = false;
@@ -47,7 +45,16 @@ export class PaginaPrincipal implements OnInit {
         console.error('Error al cargar profesores:', err);
         this.error = 'No se pudieron cargar los profesores';
         this.loading = false;
-      }
+      },
     });
+  }
+
+  abrirModal() {
+    console.log('Abriendo modal...');
+    const modalElement = document.getElementById('miModal');
+    if (modalElement) {
+      const modal = new (window as any).bootstrap.Modal(modalElement);
+      modal.show();
+    }
   }
 }

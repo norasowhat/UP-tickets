@@ -26,6 +26,17 @@
   margin: 0 auto 10px;
 }
 
+.btn {
+  border-radius: 5%;
+  border-color: var(--color-dorado);
+  color: var(--color-dorado);
+}
+
+.btn:hover {
+  background-color: var(--color-rojo);
+  border-color: var(--color-rojo);
+  color: var(--color-base);
+}
 .texto-frase {
   font-style: italic;
   font-size: 2rem;
@@ -166,4 +177,73 @@
   font-size: medium;
   border-bottom: 2px solid var(--color-dorado);
   box-sizing: border-box;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.boton {
+  background-color: var(--color-base);
+  border-color: var(--color-dorado);
+  border-radius: 7%;
+  border-width: 1.5px;
+  color: var(--color-dorado);
+  font-family: var(--font-principal) !important;
+}
+
+.boton:hover {
+  background-color: var(--color-rojo);
+  border-color: var(--color-rojo);
+  color: var(--color-base);
+}
+
+.datos-profesor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  font-size: small;
+  align-items: center;
+  gap: 1rem;
+}
+
+.datos-profesor .nombre-prof h2 {
+  font-size: 20px;
+}
+
+.datos-profesor .usuario-fake .fa-user {
+  font-size: 30px;
+}
+
+.tabla-reportes {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.tabla-reportes thead th {
+  font-family: var(--font-principal);
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 600;
+  font-size: medium;
+  border-bottom: 2px solid var(--color-dorado);
+  box-sizing: border-box;
+}
+
+.titulo-agregar h2 {
+  font-family: var(--font-formal);
+  font-size: 20px;
+  color: var(--color-dorado);
+}
+
+.espacio {
+  padding-right: 1rem;
+  font-family: var(--font-principal);
+}
+
+.descripcion-reporte .letra-placeholder {
+  font-family: var(--font-principal);
+  font-weight: 200;
 }
