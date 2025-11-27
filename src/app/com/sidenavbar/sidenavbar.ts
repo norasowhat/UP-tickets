@@ -14,4 +14,10 @@ export class Sidenavbar {
   cerrarSesion() {
     this.router.navigate(['/login']);
   }
+  irProfes() {
+    this.router.navigate(['/pagina-principal']);
+  }
+  irResumen() {
+    this.router.navigate(['/pagina-resumen']);
+  }
 }

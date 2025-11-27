@@ -17,10 +17,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Profesores</a>
+          <a
+            class="nav-link active"
+            (click)="irProfes()"
+            style="cursor: pointer"
+            aria-current="page"
+            >Profesores</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Resumen</a>
+          <a
+            class="nav-link active"
+            (click)="irResumen()"
+            style="cursor: pointer"
+            aria-current="page"
+            >Resumen</a
+          >
         </li>
         <li class="nav-item">
           <a class="nav-link" (click)="cerrarSesion()" style="cursor: pointer"
