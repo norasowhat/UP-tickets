@@ -12,6 +12,10 @@ const routes: Routes = [
     loadComponent: () =>
       import('./com/pagina-principal/pagina-principal').then((m) => m.PaginaPrincipal),
   },
+  {
+    path: 'pagina-resumen',
+    loadComponent: () => import('./com/pagina-resumen/pagina-resumen').then((m) => m.PaginaResumen),
+  },
 ];
 
 @NgModule({

@@ -3,20 +3,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AcademyService {
-  private apiUrl = 'http://localhost:8888/web/up-tickets-back/dp-academias.php';
+  private apiUrl = 'http://localhost/up-tickets-back/dp-academias.php';
 
   constructor(private http: HttpClient) {}
 
   getAcademias(): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      'X-Auth-Token': token || ''
+      'X-Auth-Token': token || '',
     });
-
-    
 
     return this.http.get<any>(this.apiUrl, { headers });
   }
@@ -24,15 +22,11 @@ export class AcademyService {
   agregarProfesor(data: any): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
-      'X-Auth-Token': token || ''
+      'X-Auth-Token': token || '',
     });
 
-    return this.http.post<any>(
-      'http://localhost:8888/web/up-tickets-back/add-profesor.php',
-      data,
-      { headers }
-    );
+    return this.http.post<any>('http://localhost:8888/web/up-tickets-back/add-profesor.php', data, {
+      headers,
+    });
   }
 }
-
-  

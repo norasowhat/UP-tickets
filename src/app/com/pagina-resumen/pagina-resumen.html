@@ -1,0 +1,59 @@
+<div class="navbar">
+  <app-sidenavbar></app-sidenavbar>
+</div>
+
+<div class="titulo-pagina">
+  <h1>Resumen:</h1>
+  <p>Selecciona el criterio que deseas mostrar junto con los datos del profesor.</p>
+</div>
+
+<div class="items-busqueda">
+  <div
+    class="item-busqueda"
+    *ngFor="
+      let boton of [
+        'Academia',
+        'Nivel máximo de estudios',
+        'Nivel SNI',
+        'Facultad',
+        'No. incidencias',
+        'Clases Actuales',
+        'Clases Pasadas',
+        'Idiomas que habla'
+      ];
+      let i = index
+    "
+  >
+    <button
+      type="button"
+      class="boton"
+      [ngClass]="{ activo: botonActivo === i }"
+      (click)="seleccionarBoton(i)"
+    >
+      {{ boton }}
+    </button>
+  </div>
+</div>
+
+<div class="contenedor-general">
+  <div class="contenedor-profesores">
+    <div class="centro-blanco">
+      <table class="tabla-centro">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>ID</th>
+            <th>Academia</th>
+            <th>Satisfacción académica</th>
+            <th>Nivel de estudios</th>
+            <th>No. de incidencias</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- aquí van tus filas -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

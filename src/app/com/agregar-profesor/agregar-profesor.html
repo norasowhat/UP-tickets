@@ -10,7 +10,7 @@
           <div class="titulo-input">
             <label for="password">ID Institucional</label>
           </div>
-          <input class="input-field" type="text" [(ngModel)]="profesor.ID"/>
+          <input class="input-field" type="text" [(ngModel)]="profesor.ID" />
           <label for="input-field" class="input-label">ID del profesor</label>
           <span class="input-highlight"></span>
         </div>
@@ -18,7 +18,7 @@
           <div class="titulo-input">
             <label for="password">Nombre</label>
           </div>
-          <input class="input-field" type="text" [(ngModel)]="profesor.nombre"/>
+          <input class="input-field" type="text" [(ngModel)]="profesor.nombre" />
           <label for="input-field" class="input-label">Nombre del profesor</label>
           <span class="input-highlight"></span>
         </div>
@@ -42,7 +42,12 @@
           <div class="titulo-input">
             <label for="password">Email</label>
           </div>
-          <input [(ngModel)]="profesor.correo" placeholder="xxxxxxx@up.edu.mx" class="input-field" type="text" />
+          <input
+            [(ngModel)]="profesor.correo"
+            placeholder="xxxxxxx@up.edu.mx"
+            class="input-field"
+            type="text"
+          />
           <label for="input-field" class="input-label">Correo del profesor</label>
           <span class="input-highlight"></span>
         </div>
@@ -59,8 +64,8 @@
             <label for="password">Academia</label>
           </div>
           <select class="input-field" [(ngModel)]="profesor.id_academia">
-            <option value="">Selecciona...</option>
-            <option *ngFor="let a of academias" [value]="a.ID">
+            <option value="" class="color">Selecciona...</option>
+            <option class="color" *ngFor="let a of academias" [value]="a.ID">
               {{ a.name }}
             </option>
           </select>

@@ -119,3 +119,7 @@ button {
   margin-bottom: 1rem;
   font-size: x-large;
 }
+
+.input-field .color {
+  color: black;
+}

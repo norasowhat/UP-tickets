@@ -24,6 +24,7 @@
   color: var(--color-rojo) !important;
   font-size: larger;
   font-family: var(--font-principal);
+  font-weight: 500;
 }
 
 .navbar-brand {
