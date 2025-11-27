@@ -22,8 +22,8 @@
       <p>• Para facilitar la búsqueda puedes ingresar el nombre del profesor.</p>
     </div>
     <div class="buscar-profesor">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="" />
+      <form class="d-flex" role="search" (submit) = "buscarProfesor()" >
+        <input class="form-control me-2" type="search" placeholder="Buscar" [(ngModel)]="busquedaProfesor" aria-label="" name="busqueda" />
         <button class="btn btn-outline-success" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
