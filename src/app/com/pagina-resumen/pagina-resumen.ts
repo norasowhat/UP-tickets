@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Sidenavbar } from '../sidenavbar/sidenavbar';
 import { ResumenService } from '../../services/get-resumen';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-pagina-resumen',
@@ -67,4 +68,20 @@ export class PaginaResumen {
       },
   });
 }
+
+  exportarExcel(){
+    const data = this.resumen.map(item => {
+      const fila: any = {};
+      this.encabezadosSeleccionados.forEach(h => {
+        fila[h] = item[h] || 'Ninguno';
+      });
+      return fila;
+    });
+
+    const worksheet = XLSX.utils.json_to_sheet(data);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Resumen');
+
+    XLSX.writeFile(workbook, 'resumen_profesores.xlsx');
+  }
 }
