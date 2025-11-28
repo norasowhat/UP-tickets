@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { Sidenavbar } from '../sidenavbar/sidenavbar';
 import { AgregarProfesor } from '../agregar-profesor/agregar-profesor';
 import { ProfesorService } from '../../services/tabla-profesores';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-pagina-principal',
   standalone: true,
-  imports: [CommonModule, Sidenavbar, AgregarProfesor],
+  imports: [CommonModule, Sidenavbar, AgregarProfesor, FormsModule],
   templateUrl: './pagina-principal.html',
   styleUrl: './pagina-principal.css',
   providers: [ProfesorService],
@@ -20,10 +21,14 @@ export class PaginaPrincipal implements OnInit {
 
   constructor(private router: Router, private profesorService: ProfesorService) {}
 
+  busquedaProfesor = "";
+
+  ProfesoresFiltrados : any[] = [];
+
   ngOnInit(): void {
     this.loadProfesores();
   }
-
+  
   loadProfesores(): void {
     // this.profesorService.getProfesores().subscribe({
     //   next: (res) => {
@@ -39,6 +44,7 @@ export class PaginaPrincipal implements OnInit {
       next: (data: any) => {
         console.log('Datos recibidos del backend:', data);
         this.profesores = data;
+        this.ProfesoresFiltrados = data;
         this.loading = false;
       },
       error: (err: any) => {
@@ -48,6 +54,15 @@ export class PaginaPrincipal implements OnInit {
       },
     });
   }
+
+  buscarProfesor() {
+    console.log(this.profesores);
+    const termino = this.busquedaProfesor.toLowerCase();
+    console.log(termino);
+  
+    this.ProfesoresFiltrados = this.profesores.filter(p =>
+      p.Nombre.toLowerCase().includes(termino));
+    }
 
   abrirModal() {
     console.log('Abriendo modal...');

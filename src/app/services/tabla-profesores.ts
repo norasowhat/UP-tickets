@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProfesorService {
-  private apiUrl = 'http://localhost/up-tickets-back/table-profesores.php';
+  private apiUrl = 'http://localhost:8888/web/up-tickets-back/table-profesores.php';
 
   constructor(private http: HttpClient) {}
 
