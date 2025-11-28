@@ -102,3 +102,24 @@
   border-color: var(--color-rojo);
   color: var(--color-base);
 }
+
+.descarga {
+  margin-top: 4rem;
+  padding-left: 4rem;
+}
+.boton-descarga {
+  max-width: 8em;
+  max-height: 8rem;
+  color: var(--color-base);
+  background-color: var(--color-rojo);
+  border-color: var(--color-rojo);
+  border-radius: 5%;
+  font-family: var(--font-principal);
+}
+
+.boton-descarga:hover {
+  background-color: var(--color-dorado);
+  border-color: var(--color-dorado);
+  color: var(--color-rojo);
+  font-family: var(--font-principal);
+}
