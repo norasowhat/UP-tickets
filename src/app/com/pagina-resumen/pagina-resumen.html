@@ -12,6 +12,8 @@
     class="item-busqueda"
     *ngFor="
       let boton of [
+        'Nombre',
+        'ID',
         'Academia',
         'Nivel máximo de estudios',
         'Nivel SNI',
@@ -27,7 +29,7 @@
     <button
       type="button"
       class="boton"
-      [ngClass]="{ activo: botonActivo === i }"
+      [ngClass]="{ activo: botonesActivos.includes(i) }"
       (click)="seleccionarBoton(i)"
     >
       {{ boton }}
@@ -41,17 +43,19 @@
       <table class="tabla-centro">
         <thead>
           <tr>
-            <th>Nombre</th>
-            <th>ID</th>
-            <th>Academia</th>
-            <th>Satisfacción académica</th>
-            <th>Nivel de estudios</th>
-            <th>No. de incidencias</th>
+            <th *ngFor="let head of encabezadosSeleccionados">
+              {{head}}
+            </th>
           </tr>
         </thead>
 
         <tbody>
-          <!-- aquí van tus filas -->
+          <tr *ngFor="let c of resumen">
+            <td *ngFor="let h of encabezadosSeleccionados">
+              {{c[h] || 'Ninguno'}}
+
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

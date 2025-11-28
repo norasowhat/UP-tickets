@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Sidenavbar } from '../sidenavbar/sidenavbar';
+import { ResumenService } from '../../services/get-resumen';
 
 @Component({
   selector: 'app-pagina-resumen',
@@ -11,9 +12,59 @@ import { Sidenavbar } from '../sidenavbar/sidenavbar';
   styleUrl: './pagina-resumen.css',
 })
 export class PaginaResumen {
-  botonActivo: number = -1;
+  botonesActivos: number[] = [];
+
+  resumen :any[]=[];
+
+  encabezados = [
+    'Nombre',
+    'ID',
+    'Academia',
+    'Nivel máximo de estudios',
+    'Nivel SNI',
+    'Facultad',
+    'No. incidencias',
+    'Clases Actuales',
+    'Clases Pasadas',
+    'Idiomas que habla'
+  ];
+
+  ngOnInit(): void {
+    this.loadResumen();
+    };  
+
+  encabezadosSeleccionados: string[] = [];
+
+
+  constructor(private resumenService : ResumenService){}
 
   seleccionarBoton(index: number) {
-    this.botonActivo = index;
+    const encabezado = this.encabezados[index];
+    if (!this.botonesActivos.includes(index)) {
+      this.botonesActivos.push(index);
+      this.encabezadosSeleccionados.push(encabezado);
+
+    }
+    else{
+      let i = this.botonesActivos.indexOf(index)
+      let e = this.encabezadosSeleccionados.indexOf(encabezado)
+      this.botonesActivos.splice(i,1);
+      this.encabezadosSeleccionados.splice(e,1);
+    }
+
   }
+
+  loadResumen():void{
+    this.resumenService.getResumen().subscribe({
+      next:(data:any) =>{
+        console.log('Resumen recibido',data)
+        this.resumen=data;
+
+
+      },
+      error: (err: any) => {
+        console.error('Error al cargar profesores:', err);
+      },
+  });
+}
 }

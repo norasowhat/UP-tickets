@@ -37,7 +37,7 @@
   <div class="items-busqueda">
     <div class="item-busqueda">
       <h1>Grado investigador</h1>
-      <select class="dropdown-item">
+      <select class="dropdown-item" [(ngModel)]="gradoInvestigador" (change)="filtarProfesores()">
         <option value="">Selecciona...</option>
         <option value="nacional">Candidato a Investigador Nacional</option>
         <option value="nivel1">Nivel I</option>
@@ -48,7 +48,7 @@
     </div>
     <div class="item-busqueda">
       <h1>No. incidencias</h1>
-      <select class="dropdown-item">
+      <select class="dropdown-item" [(ngModel)]="incidencias" (change)="filtarProfesores()" >
         <option value="">Selecciona...</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -59,18 +59,23 @@
     </div>
     <div class="item-busqueda">
       <h1>Satisfacción académica</h1>
-      <select class="dropdown-item">
+      <select class="dropdown-item" [(ngModel)]="satisfaccion" (change)="filtarProfesores()" >
         <option value="">Selecciona...</option>
-        <option value="doctorado">0-20</option>
-        <option value="maestria">20-40</option>
-        <option value="licenciatura">40-60</option>
-        <option value="licenciatura">60-80</option>
-        <option value="licenciatura">80-100</option>
+        <option value="0-20">0-20</option>
+        <option value="20-40">20-40</option>
+        <option value="40-60">40-60</option>
+        <option value="60-80">60-80</option>
+        <option value="80-100">80-100</option>
       </select>
     </div>
     <div class="item-busqueda">
-      <h1>Fecha contratación</h1>
-      <input type="date" class="dropdown-item" />
+      <h1>Academia</h1>
+      <select class="dropdown-item" [(ngModel)]="academia" (change)="filtarProfesores()" >
+        <option value="" class="color">Selecciona...</option>
+        <option class="color" *ngFor="let a of academias" [value]="a.name">
+          {{ a.name }}
+        </option>
+      </select>
     </div>
   </div>
 
@@ -84,19 +89,19 @@
               <th>ID</th>
               <th>Academia</th>
               <th>Satisfacción académica</th>
-              <th>Nivel de estudios</th>
+              <th>Grado investigador</th>
               <th>No. de incidenias</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let prof of profesores">
+            <tr *ngFor="let prof of ProfesoresFiltrados">
               <td>{{ prof.Nombre }}</td>
               <td>{{ prof.ID }}</td>
               <td>{{ prof.Academia }}</td>
               <td>{{ prof.Satisfaccion_academica }}</td>
-              <td>{{ prof.Nivel_de_estudios }}</td>
+              <td>{{ prof.Nivel_de_estudios || 'Ninguno' }}</td>
               <td>{{ prof.Numero_de_incidencias }}</td>
-              <td><button class="boton" (click)="abrirModal()">Reportes</button></td>
+              <td><button class="boton" (click)="abrirModal(prof)">Reportes</button ></td>
             </tr>
           </tbody>
         </table>
@@ -125,7 +130,7 @@
             <i class="fa-regular fa-user"></i>
           </div>
           <div class="nombre-prof">
-            <h2>Jesús Alberto S.</h2>
+            <h2>{{profesorSeleccionado.Nombre}}</h2>
           </div>
         </div>
         <div class="reportes">
@@ -144,26 +149,52 @@
           </div>
           <div class="tipo-reporte">
             <label for="" class="espacio">Tipo de reporte:</label>
-            <select class="input-field">
+            <select class="input-field" [(ngModel)]="reporte.category">
               <option value="">...</option>
-              <option>Cambios de calificación</option>
-              <option>Cambios de fecha de examen</option>
-              <option>Reportes de integridad académica</option>
-              <option>Reporte disciplinar a profesor</option>
-              <option>Incidencia de pago a favor</option>
-              <option>Incidencia de pago en contra</option>
+              <option value="1">Cambios de calificación</option>
+              <option value="2">Cambios de fecha de examen</option>
+              <option value="3">Reportes de integridad académica</option>
+              <option value="4">Reporte disciplinar a profesor</option>
+              <option value="5">Incidencia de pago a favor</option>
+              <option value="6">Incidencia de pago en contra</option>
             </select>
           </div>
           <div class="descripcion-reporte">
             <label for="" class="espacio">Descripción:</label>
-            <input type="text" placeholder="..." class="letra-placeholder" />
+            <input type="text" placeholder="..." class="letra-placeholder" [(ngModel)]="reporte.description" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" (click)="agregarReporte()"class="boton">Agregar reporte</button>
+        </div>
+        <div class="ver-reportes">
+          <div class="titulo-agregar">
+            <h2>Reportes Pasados</h2>
+            <table class="tabla-centro">
+              <thead>
+                <tr>
+                  <th>Categoría</th>
+                  <th>Descripción</th>
+                  <th>Fecha de emisión</th>
+                  <th>Emitido por</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let r of profesor_reportes">
+                  <td>{{ r.category }}</td>
+                  <td>{{ r.description }}</td>
+                  <td>{{ r.date_added }}</td>
+                  <td>{{ r.last_modified_by}}</td>
+                  <!-- <td><button class="boton" (click)="abrirModal(prof)">Reportes</button ></td> -->
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
 
       <div class="modal-footer">
         <button type="button" class="boton" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="boton">Agregar reporte</button>
       </div>
     </div>
   </div>

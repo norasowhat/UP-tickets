@@ -52,7 +52,7 @@ export class AgregarProfesor implements OnInit {
   enviarFormulario() {
     console.log("Datos enviados:", this.profesor);
 
-    this.academyService.agregarProfesor(this.profesor).subscribe({   // <-- CORREGIDO
+    this.academyService.agregarProfesor(this.profesor).subscribe({   
       next: (resp:any) => {
         console.log("Respuesta del servidor:", resp);
         alert("Profesor agregado correctamente");

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AcademyService {
-  private apiUrl = 'http://localhost/up-tickets-back/dp-academias.php';
+  private apiUrl = 'http://localhost:8888/web/up-tickets-back/dp-academias.php';
 
   constructor(private http: HttpClient) {}
 
