@@ -22,8 +22,15 @@
       <p>• Para facilitar la búsqueda puedes ingresar el nombre del profesor.</p>
     </div>
     <div class="buscar-profesor">
-      <form class="d-flex" role="search" (submit) = "buscarProfesor()" >
-        <input class="form-control me-2" type="search" placeholder="Buscar" [(ngModel)]="busquedaProfesor" aria-label="" name="busqueda" />
+      <form class="d-flex" role="search" (submit)="buscarProfesor()">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Buscar"
+          [(ngModel)]="busquedaProfesor"
+          aria-label=""
+          name="busqueda"
+        />
         <button class="btn btn-outline-success" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -48,7 +55,7 @@
     </div>
     <div class="item-busqueda">
       <h1>No. incidencias</h1>
-      <select class="dropdown-item" [(ngModel)]="incidencias" (change)="filtarProfesores()" >
+      <select class="dropdown-item" [(ngModel)]="incidencias" (change)="filtarProfesores()">
         <option value="">Selecciona...</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -59,7 +66,7 @@
     </div>
     <div class="item-busqueda">
       <h1>Satisfacción académica</h1>
-      <select class="dropdown-item" [(ngModel)]="satisfaccion" (change)="filtarProfesores()" >
+      <select class="dropdown-item" [(ngModel)]="satisfaccion" (change)="filtarProfesores()">
         <option value="">Selecciona...</option>
         <option value="0-20">0-20</option>
         <option value="20-40">20-40</option>
@@ -70,7 +77,7 @@
     </div>
     <div class="item-busqueda">
       <h1>Academia</h1>
-      <select class="dropdown-item" [(ngModel)]="academia" (change)="filtarProfesores()" >
+      <select class="dropdown-item" [(ngModel)]="academia" (change)="filtarProfesores()">
         <option value="" class="color">Selecciona...</option>
         <option class="color" *ngFor="let a of academias" [value]="a.name">
           {{ a.name }}
@@ -101,7 +108,7 @@
               <td>{{ prof.Satisfaccion_academica }}</td>
               <td>{{ prof.Nivel_de_estudios || 'Ninguno' }}</td>
               <td>{{ prof.Numero_de_incidencias }}</td>
-              <td><button class="boton" (click)="abrirModal(prof)">Reportes</button ></td>
+              <td><button class="boton" (click)="abrirModal(prof)">Reportes</button></td>
             </tr>
           </tbody>
         </table>
@@ -130,17 +137,7 @@
             <i class="fa-regular fa-user"></i>
           </div>
           <div class="nombre-prof">
-            <h2>{{profesorSeleccionado.Nombre}}</h2>
-          </div>
-        </div>
-        <div class="reportes">
-          <div class="tabla-reportes">
-            <thead>
-              <tr>
-                <th>Tipo</th>
-                <th>Descripción</th>
-              </tr>
-            </thead>
+            <h2>{{ profesorSeleccionado.Nombre }}</h2>
           </div>
         </div>
         <div class="agregar-reporte">
@@ -161,11 +158,16 @@
           </div>
           <div class="descripcion-reporte">
             <label for="" class="espacio">Descripción:</label>
-            <input type="text" placeholder="..." class="letra-placeholder" [(ngModel)]="reporte.description" />
+            <input
+              type="text"
+              placeholder="..."
+              class="letra-placeholder"
+              [(ngModel)]="reporte.description"
+            />
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" (click)="agregarReporte()"class="boton">Agregar reporte</button>
+          <button type="submit" (click)="agregarReporte()" class="boton">Agregar reporte</button>
         </div>
         <div class="ver-reportes">
           <div class="titulo-agregar">
@@ -184,7 +186,7 @@
                   <td>{{ r.category }}</td>
                   <td>{{ r.description }}</td>
                   <td>{{ r.date_added }}</td>
-                  <td>{{ r.last_modified_by}}</td>
+                  <td>{{ r.last_modified_by }}</td>
                   <!-- <td><button class="boton" (click)="abrirModal(prof)">Reportes</button ></td> -->
                 </tr>
               </tbody>

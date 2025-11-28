@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ResumenService {
-  private apiUrl = 'http://localhost:8888/web/up-tickets-back/resumen-service.php';
+  private apiUrl = 'http://localhost/up-tickets-back/resumen-service.php';
 
   constructor(private http: HttpClient) {}
 
